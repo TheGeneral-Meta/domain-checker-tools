@@ -1,24 +1,23 @@
 {
-  "name": "domain-checker-tools",
+  "name": "web-meta-analyzer",
   "version": "1.0.0",
-  "description": "Domain Checker Tools - Cek Title, AMP, Canonical URL dan Status HTTP",
+  "description": "Web Meta Analyzer - Cek Title, AMP, Canonical URL dan Status HTTP website secara lengkap",
   "main": "api/check-domain.js",
   "scripts": {
     "dev": "vercel dev",
     "deploy": "vercel deploy --prod"
   },
   "keywords": [
-    "domain-checker",
     "seo-tools",
+    "meta-analyzer",
     "amp-checker",
     "canonical-checker",
-    "vercel"
+    "web-analyzer"
   ],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.7.0",
-    "jsdom": "^23.0.1"
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
     "vercel": "^33.0.0"
