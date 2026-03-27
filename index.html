@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Domain Checker Tools - Cek Title, AMP, Canonical URL, dan Status HTTP website secara lengkap">
+    <meta name="keywords" content="domain checker, seo tools, amp checker, canonical checker, title checker">
+    <meta name="author" content="Your Name">
+    <title>Domain Checker Tools Pro | SEO & AMP Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔍 Domain Checker Tools Pro</h1>
+            <p>Cek Title, AMP, Canonical URL & Status HTTP secara lengkap dan akurat</p>
+            <div class="badges">
+                <span class="badge">⚡ SEO Tools</span>
+                <span class="badge">📊 Real-time Check</span>
+                <span class="badge">🔄 CORS Proxy</span>
+                <span class="badge">🚀 Vercel Deployed</span>
+            </div>
+        </header>
+
+        <div class="input-section">
+            <div class="mode-selector">
+                <button class="mode-btn active" onclick="switchMode('single')">Single URL</button>
+                <button class="mode-btn" onclick="switchMode('batch')">Batch URLs</button>
+            </div>
+
+            <div id="singleMode" class="mode-content active">
+                <div class="input-group">
+                    <input type="text" id="singleUrl" placeholder="https://example.com atau example.com" />
+                    <button onclick="checkSingleUrl()" class="btn-primary">🔍 Cek URL</button>
+                </div>
+            </div>
+
+            <div id="batchMode" class="mode-content">
+                <textarea id="batchUrls" rows="5" placeholder="Masukkan multiple URL (satu per baris)&#10;https://example1.com&#10;https://example2.com&#10;https://example3.com"></textarea>
+                <div class="button-group">
+                    <button onclick="checkBatchUrls()" class="btn-primary">📊 Cek Semua URL</button>
+                    <button onclick="clearResults()" class="btn-secondary">🗑️ Clear Hasil</button>
+                    <button onclick="loadExamples()" class="btn-secondary">📝 Load Contoh</button>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="useProxy" checked>
+                    <span>Gunakan CORS Proxy (jika direct fetch gagal)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showResponseTime" checked>
+                    <span>Tampilkan Response Time</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p id="loadingText">Sedang memproses URL...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            
+            <div id="results">
+                <div id="noResults" class="no-results">
+                    <div class="icon">📭</div>
+                    <h3>Belum ada data</h3>
+                    <p>Silakan masukkan URL untuk mulai pengecekan</p>
+                    <p class="hint">Support: HTTP/HTTPS, multiple URL, CORS proxy</p>
+                </div>
+                
+                <div class="results-header" id="resultsHeader" style="display: none;">
+                    <div class="summary-info" id="summaryInfo"></div>
+                    <div class="export-buttons">
+                        <button onclick="exportToCSV()" class="btn-export">📥 Export CSV</button>
+                        <button onclick="exportToJSON()" class="btn-export">📄 Export JSON</button>
+                    </div>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table id="resultsTable" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>URL</th>
+                                <th>Status HTTP</th>
+                                <th>Title</th>
+                                <th>Canonical URL</th>
+                                <th>AMP Version</th>
+                                <th>Response Time</th>
+                                <th>Waktu Cek</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Domain Checker Tools Pro | Powered by Vercel</p>
+            <p class="tech-stack">Built with HTML5, CSS3, JavaScript & Node.js API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
