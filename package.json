@@ -1,0 +1,26 @@
+{
+  "name": "domain-checker-tools",
+  "version": "1.0.0",
+  "description": "Domain Checker Tools - Cek Title, AMP, Canonical URL dan Status HTTP",
+  "main": "api/check-domain.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  },
+  "keywords": [
+    "domain-checker",
+    "seo-tools",
+    "amp-checker",
+    "canonical-checker",
+    "vercel"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "jsdom": "^23.0.1"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
